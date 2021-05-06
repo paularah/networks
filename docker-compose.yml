@@ -23,7 +23,6 @@ services:
       - "80:80"
       - "443:443"
       - "8080:8080"
-      - "5000:5000"
     volumes:
       - "./letsencrypt:/letsencrypt"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
@@ -46,5 +45,7 @@ services:
       #   - "traefik.http.routers.server.rule=Host(`localhost`)"
       - "traefik.http.routers.server.entrypoints=websecure"
       - "traefik.http.routers.server.tls.certresolver=le"
+      - "traefik.http.middlewares.https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.https-redirect.redirectscheme.permanent=true"
     ports:
       - "5000:5000"
