@@ -27,10 +27,10 @@ services:
       - "./letsencrypt:/letsencrypt"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
     labels:
-      - "traefik.enable=true" # <== Enable traefik on itself to view dashboard and assign subdomain to view it
-      - "traefik.http.routers.api.rule=Host(`dashboard.aluopensource.com`)" # <== Setting the domain for the dashboard
+      - "traefik.enable=true"
+      - "traefik.http.routers.api.rule=Host(`dashboard.aluopensource.com`)"
       # - "traefik.http.routers.api.rule=Host(`localhost`)"
-      - "traefik.http.routers.api.service=api@internal" # <== Enabling the api to be a service to access
+      - "traefik.http.routers.api.service=api@internal"
       - "traefik.http.middlewares.https-redirect.redirectscheme.scheme=https"
       - "traefik.http.middlewares.https-redirect.redirectscheme.permanent=true"
 
