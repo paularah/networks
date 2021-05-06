@@ -41,7 +41,7 @@ services:
       dockerfile: Dockerfile
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.server.rule=Host(`networks.aluopensource.com`)"
+      - "traefik.http.routers.server.rule=Host(`arah.wenss.me`)"
       #   - "traefik.http.routers.server.rule=Host(`localhost`)"
       - "traefik.http.routers.server.entrypoints=websecure"
       - "traefik.http.routers.server.tls.certresolver=le"
