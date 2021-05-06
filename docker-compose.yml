@@ -9,6 +9,9 @@ services:
       - "--api.insecure=true"
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
+      - "--api.dashboard=true"
+      - "--api.debug=true"
+      - "--log.LEVEL=DEBUG"
       - "--entrypoints.web.address=:80"
       - "--entrypoints.websecure.address=:443"
       - "--certificatesresolvers.le.acme.httpchallenge=true"
@@ -34,3 +37,5 @@ services:
       #   - "traefik.http.routers.server.rule=Host(`localhost`)"
       - "traefik.http.routers.server.entrypoints=websecure"
       - "traefik.http.routers.server.tls.certresolver=le"
+    ports:
+      - "5000:5000"
