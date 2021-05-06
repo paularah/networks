@@ -28,7 +28,6 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
     labels:
       - "traefik.enable=true" # <== Enable traefik on itself to view dashboard and assign subdomain to view it
-      - "traefik.docker.network=web"
       - "traefik.http.routers.api.rule=Host(`dashboard.aluopensource.com`)" # <== Setting the domain for the dashboard
       # - "traefik.http.routers.api.rule=Host(`localhost`)"
       - "traefik.http.routers.api.service=api@internal" # <== Enabling the api to be a service to access
