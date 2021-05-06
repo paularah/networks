@@ -47,5 +47,6 @@ services:
       - "traefik.http.routers.server.tls.certresolver=le"
       - "traefik.http.middlewares.https-redirect.redirectscheme.scheme=https"
       - "traefik.http.middlewares.https-redirect.redirectscheme.permanent=true"
+      - "traefik.http.middlewares.https-redirect.redirectscheme.port=443
     ports:
       - "5000:5000"
